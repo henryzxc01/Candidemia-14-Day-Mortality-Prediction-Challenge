@@ -1,0 +1,19 @@
+Python: 3.11.9
+
+從專案根目錄安裝相依套件：
+python -m pip install -r requirements.txt
+
+重新產生 cross-validation 結果：
+python code/run_all.py
+
+test_X.xlsx 發布後，產生測試集預測檔：
+1. 如果 test_X.xlsx 不在 data/test_X.xlsx，請先修改 code/predict_test.py 裡的 TEST_X_PATH。
+2. 執行：
+python code/predict_test.py
+
+預期輸出：
+- cv_results.xlsx
+- 1258037_cv_results.xlsx
+- 執行 predict_test.py 後會產生 1258037_Results.xlsx
+
+run_all.py 使用固定 seed（42）與 5-fold stratified cross-validation。
